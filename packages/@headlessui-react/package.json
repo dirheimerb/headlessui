@@ -1,0 +1,57 @@
+{
+  "name": "@headlessui/react",
+  "version": "2.0.0-alpha.4",
+  "description": "A set of completely unstyled, fully accessible UI components for React, designed to integrate beautifully with Tailwind CSS.",
+  "main": "dist/index.cjs",
+  "typings": "dist/index.d.ts",
+  "module": "dist/headlessui.esm.js",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "types": {
+      "import": "./dist/index.d.ts",
+      "require": "./dist/index.d.cts"
+    },
+    "import": "./dist/headlessui.esm.js",
+    "require": "./dist/index.cjs"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dirheimerb/headlessui.git",
+    "directory": "packages/@headlessui-react"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "eslint . --max-warnings 0",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17 || ^18",
+    "react-dom": "^16 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.2.1",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "snapshot-diff": "^0.10.0"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.26.9",
+    "@react-aria/focus": "^3.16.0",
+    "@react-aria/interactions": "3.20.1",
+    "@tanstack/react-virtual": "3.0.4"
+  }
+}
